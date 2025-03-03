@@ -4,7 +4,7 @@ public class TestLostUpdates {
 
 	public static void main(String[] args) throws Exception {
 		
-		int ntimes = 100; // try with different values: 100, 200, 1000, 5000, ...
+		int ntimes = 15_000_000; // try with different values: 100, 200, 1000, 5000, ...
 		
 		if (args.length > 0) {
 			ntimes = Integer.parseInt(args[0]);

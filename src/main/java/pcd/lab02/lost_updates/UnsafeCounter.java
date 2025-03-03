@@ -8,11 +8,22 @@ public class UnsafeCounter {
 		this.cont = base;
 	}
 	
-	public void inc(){
+	/*public void inc(){
+		// se fatto qui il syncronize, delego la thread safeness
+		// all'operazione di incremento
+		synchronized (this) {
+			cont++;
+		}
+	}*/
+
+	public synchronized void inc() {
+		// se creato così rendo sincronizzato direttamente il metodo
 		cont++;
 	}
 	
 	public int getValue(){
-		return cont;
+		synchronized (this) {
+			return cont;
+		}
 	}
 }

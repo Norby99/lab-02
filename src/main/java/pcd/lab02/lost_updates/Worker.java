@@ -14,8 +14,13 @@ public class Worker extends Thread {
 	
 	public void run(){
 		log("started");
-		for (int i = 0; i < ntimes; i++){
-			counter.inc();
+		for (int i = 0; i < ntimes; i++) {
+			// se faccio il syncronized qui, rendo l'oggetto worker thread safe, ma non
+			// la funzione di incremento. In poche parole l'operazione di increment
+			// rimane unsafe
+			//synchronized (counter) {
+				counter.inc();
+			//}
 		}
 		log("completed");
 	}
