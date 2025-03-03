@@ -4,7 +4,7 @@ public class TestCheckAndAct {
 
 	public static void main(String[] args) throws Exception {
 
-		int ntimes = 1000000; 
+		int ntimes = 1_000_000;
 		
 		BoundedCounter c = new BoundedCounter(0,1);
 		

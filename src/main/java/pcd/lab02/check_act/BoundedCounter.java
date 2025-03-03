@@ -11,7 +11,7 @@ public class BoundedCounter {
 	}
 	
 	public void inc() throws OverflowException {
-		synchronized (this){
+		synchronized (this) {
 			if (cont + 1 > max){
 				throw new OverflowException();
 			}
@@ -20,8 +20,8 @@ public class BoundedCounter {
 	}
 
 	public  void dec() throws UnderflowException {
-		synchronized (this){
-			if (cont - 1 < min){
+		synchronized (this) {
+			if (cont - 1 < min)  {
 				throw new UnderflowException();
 			}
 			cont--;
@@ -29,7 +29,7 @@ public class BoundedCounter {
 	}
 	
 	public  int getValue(){
-		synchronized (this){
+		synchronized (this) {
 			return cont;
 		}
 	}
